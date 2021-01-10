@@ -3,8 +3,7 @@
 ; quick and dirty inelegant code for now..
 ; original code -- crappy :) from Cliosoft..
 ; use '.' for all cells, don't use "*"
-
-procedure( chkOutCells( lib cellNameMatch @key (layout nil) )
+procedure( ClioChkOutCells( lib cellNameMatch @key (layout nil) )
   let( (cv cell libId objId cell cells view views spec specList state)
   
     libId = ddGetObj( lib )

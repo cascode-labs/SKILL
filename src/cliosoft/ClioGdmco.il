@@ -1,3 +1,7 @@
+
+; Check out all the cellviews from the specified library, lib
+;  keyword args:
+;   cv: The view name to be checked out, by default the "layout" view
 procedure( ClioGdmco( lib @key (cv "layout") )
   let( (libId objId cell cells view views spec specList state)
   
