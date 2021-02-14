@@ -69,7 +69,7 @@ load("/home/USERNAME/SKILL/schIncreasePinSpacing.il")
 
 
 ; 4/22/2014 atl v chelsea : grid
-hiSetBindKey("Schematics" "Ctrl<Key>F10" "sch_grid_togl()")
+
 
 ; load("/home/USERNAME/SKILL/addVDDVSS.il")
 ; load("/home/USERNAME/SKILL/getVDDVSS.il")
@@ -174,13 +174,6 @@ hiSetBindKey("Layout" "Ctrl<Key>l" "{drLoadDrf(buildString( list( pwd() \"displa
 hiSetBindKey("Schematics" "Ctrl Shift<Key>b" "{drLoadDrf(buildString( list( pwd() \"display.drf_blink\") \"/\" )  ) hiRedraw()}" )
 hiSetBindKey("Layout" "Ctrl Shift<Key>b" "{drLoadDrf(buildString( list( pwd() \"display.drf_blink\") \"/\" )  ) hiRedraw()}" )
 
-; increase/ decrease wire thickness with ALT - scrollwheel
-; hiSetBindKey("Schematics" "Alt<Btn4Down>" "geGetSelSet()~>width = car(geGetSelSet()~>width)*1.25")
-; hiSetBindKey("Schematics" "Alt<Btn5Down>" "geGetSelSet()~>width = car(geGetSelSet()~>width)*0.8")
-hiSetBindKey("Schematics" "Alt<Btn4Down>" "inc_wire_inst(1.25)")
-hiSetBindKey("Schematics" "Alt<Btn5Down>" "inc_wire_inst(0.8)")
-
-
 hiSetBindKey("Schematics" "Ctrl<Key>r" "schHiReplace()")
 hiSetBindKey("Symbol" "Ctrl<Key>r" "schHiReplace()")
 
@@ -204,7 +197,7 @@ hiSetBindKey("Schematics" "Alt<Key>7" "_vivaStartSelectSignalMode( \"IS\" )")
 ; hiSetBindKey("Schematics" "Ctrl<Key>4" "_amsaDirectPlot( sevSession(hiGetCurrentWindow()) 'asiiPlotTranSignalCB)")
 ; after de post aus Andrew Beckett
 ; ; hiSetBindKey("Schematics" "Ctrl<Key>4" "load(\"/home/USERNAME/SKILL/direct_plot.il\")")
-hiSetBindKey("Schematics" "Ctrl<Key>4" "MYappendSignal()")
+
 hiSetBindKey("Schematics" "Shift<Key>4" "MYappendAllSignal()")
 
 ; Checking for ver 6
@@ -258,7 +251,6 @@ hiSetBindKey("Schematics" "Ctrl<Key>x" "MYdescend(0)")
 ; 1/31/2013 :(
 hiSetBindKey("Schematics" "Alt<Key>d" "CCSclip() hiRegTimer(\"zoomInst(CLIPDATA)\" 10)")
 
-hiSetBindKey("Schematics" "Alt<Key>x" "hierDescend(parseString(hierPath \"/\"))")
 hiSetBindKey("Schematics" "Ctrl<Key>y" "load(\"/home/USERNAME/SKILL/descendSym.il\")")
 hiSetBindKey("Schematics" "Alt<Key>e" "{hierPath=geGetInstHier(hiGetCurrentWindow()) schHiReturnToTop()}")
 hiSetBindKey("Schematics" "Alt<Key>g" "CCSSnapToGrid()")
@@ -462,13 +454,10 @@ hiSetBindKey( "Schematics" "Shift <Key>q" "schHiCreateNoteShape( ?shape \"polygo
 ; 6/1/16 and 7/12/18
 hiSetBindKey( "Schematics" "<Key>n" "schHiCreateNoteShape( ?shape \"line\" ?style \"solid\" ?width 0)")
 
-; 7/26/18
-hiSetBindKey("Schematics" "Alt Shift <Key>q" "load( \"/home/USERNAME/SKILL/sch_prop_all_sel.il\" )" )
-hiSetBindKey("Schematics" "<Key>q" "load( \"/home/USERNAME/SKILL/sch_prop_only_current.il\" )" )
+
 
 ; 8/25/18
-load "/home/USERNAME/SKILL/CreateLibManSelInst.il"
-hiSetBindKey("Schematics" "Ctrl Alt <Key>n" "CreateLibManSelInst()" )
+
 ; 8/13/19
 hiSetBindKey("Layout" "Ctrl Alt <Key>n" "CreateLibManSelInst()" )
 
@@ -479,10 +468,7 @@ MYVIEW= ""
 if( load_all_bindkeys 
 then
 	println("Loading additional bindkeys")
-	; 9/12/18 ; Parul Sharma
-	hiSetBindKey("Schematics" "Ctrl <Key>n" "{ MYLIB=schCreateInstForm->libraryName->value \
-	MYCELL=schCreateInstForm->cellName->value MYVIEW=schCreateInstForm->viewName->value \
-	schHiCreateInst(\"basic\" \"noConn\" \"symbol\") }")
+
 
 
 	hiSetBindKey("Schematics" "<Key>i" "{ if( MYLIB && MYCELL && MYVIEW then \
@@ -550,12 +536,6 @@ load "/home/USERNAME/SKILL/ICM_libManSelectInst.il"
 ; 10/9/19
 load "/home/USERNAME/SKILL/putViewName.il" 
 hiSetBindKey( "Schematics" "Ctrl Shift<Key>s" "putViewName()" )
-
-; 1/11/20
-load "/home/USERNAME/SKILL/proc_alt_sh_scroll.il"
-load "/home/USERNAME/SKILL/updateTemp.il"
-hiSetBindKey("Schematics" "Alt Shift<Btn4Down>" "proc_alt_sh_scroll_up()")
-hiSetBindKey("Schematics" "Alt Shift<Btn5Down>" "proc_alt_sh_scroll_down()")
 
 ; 2/7/20
 ; load "/home/USERNAME/SKILL/viva_condense.il"	; don't know what this does seems useless :)

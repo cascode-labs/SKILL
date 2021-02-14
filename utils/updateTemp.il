@@ -1,6 +1,7 @@
 ; intention - caller will check if something is selected or not. If not,
 ; then call this.. 
 
+; Increases temperature in the ADE-L window
 procedure( updateTemp( direction )	; boolean
 	let( (sess win TEMP points point next limit)
 		points = list( -40, 0, 27, 100, 125 )	; more elegant than a bunch of if's :)

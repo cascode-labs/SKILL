@@ -13,6 +13,12 @@ let((file_path dir_path files)
 
 	files = list(
 	"abInstFreq.il"
+	"proc_alt_sh_scroll.il"
+    "updateTemp.il"
+    "txpose_inst_label.il"
+    "CCSDescend.il"
+    "CCSLibManSelectInst.il"
+    "CreateLibManSelInst.il"
 	)
 
 	foreach(file files
